@@ -1,0 +1,26 @@
+apply plugin: 'maven'
+apply plugin: 'java'
+apply from: 'https://raw.github.com/tomhermann/gradle-scripts/master/create-dirs.gradle'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.apache.cxf:cxf-bundle-minimal:2.5.2'
+}
+
+task writeNewPom << {
+    pom {
+        project {
+            inceptionYear '2008'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("pom.xml")
+}

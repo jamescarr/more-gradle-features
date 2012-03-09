@@ -1,0 +1,5 @@
+subprojects {
+  apply plugin: 'groovy'
+  apply from: 'https://raw.github.com/tomhermann/gradle-scripts/master/create-dirs.gradle'
+
+}
